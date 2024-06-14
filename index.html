@@ -1,0 +1,72 @@
+<!-- Chatbot code starts -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Chat Icon -->
+  <div id="chat-icon" class="chat-icon" onclick="toggleChat()">
+    <img src="https://img.icons8.com/cute-clipart/64/000000/chat.png" alt="Chat Icon" width="40">
+  </div>
+
+  <!-- Chat Container -->
+  <div id="chat-container" class="chat-container">
+    <div class="card">
+      <div class="chat-header">
+        <button class="menu-btn" onclick="toggleMenu()" id="menu-btn"><img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png" alt="Menu Icon"></button>
+        <span>Chatbot</span>
+        <div>
+          <button class="resize-btn" onclick="resizeChat()" title="resize chat"><img src="https://img.icons8.com/material-outlined/24/000000/resize-diagonal.png" class="icon" alt="Resize"></button>
+          <button class="resize-btn" onclick="toggleChat()" title="minimize chat"><img src="https://img.icons8.com/material-outlined/24/000000/minimize-window.png" class="icon" alt="Minimize"></button>
+          <button class="resize-btn" onclick="closeChat()" title="close chat"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png" class="icon" alt="Close"></button>
+        </div>
+      </div>
+      <div class="card-body chat-box" id="chat-box">
+        <div id="intro" class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div id="email-input" class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="form-group" id="start-chat-info">
+          <button class="btn btn-primary btn-block" onclick="startChat()">Start Chat</button>
+        </div>
+      </div>
+      <div class="card-footer chat-footer">
+        <textarea class="form-control flex-grow-1 mr-2 hidden" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)" disabled></textarea>
+        <button class="btn btn-primary submit-btn hidden" id="send-btn" onclick="sendMessage()">Send</button>
+      </div>
+      <div class="card-footer">
+        <div id="button-group" class="hidden">
+          <button class="btn btn-info mr-2" onclick="sendButtonMessage('Services')" id="service-btn">Services</button>
+          <button class="btn btn-info mr-2" onclick="sendButtonMessage('Contact')" id="contact-btn">Contact</button>
+          <button class="btn btn-info mr-2" onclick="sendButtonMessage('Updates')" id="update-btn">Updates</button>
+        </div>
+      </div>
+    </div>
+    <!-- Menu Icon -->
+    <div class="menu-btn-container">
+      <button class="menu-btn" onclick="toggleMenu()"><img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png" alt="Menu Icon"></button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
